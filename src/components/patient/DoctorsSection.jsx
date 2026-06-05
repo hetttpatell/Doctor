@@ -82,8 +82,8 @@ export default function DoctorsSection({ onSelectDoctor }) {
           ))}
         </div>
 
-        {/* Doctors Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 min-h-[300px]">
+        {/* Doctors Grid - 2x4 on mobile view for 8 doctors */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6 min-h-[300px]">
           {filteredDoctors.map((doc) => (
             <div key={doc.id} className="doctors-reveal">
               <DoctorCard

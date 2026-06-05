@@ -62,7 +62,7 @@ export default function HeroSection({
     <section
       ref={containerRef}
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden bg-clinical-dark pt-28 pb-20"
+      className="relative min-h-screen flex items-center overflow-hidden bg-clinical-dark pt-24 pb-12 sm:pt-28 sm:pb-20"
     >
       {/* Dynamic Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -83,11 +83,11 @@ export default function HeroSection({
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           {/* Left Column: Hospital Brand Content */}
-          <div className="lg:col-span-6 space-y-6 lg:pr-6">
+          <div className="lg:col-span-6 space-y-4 sm:space-y-6 lg:pr-6">
             {/* Rating Pill */}
-            <div className="hero-badge inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4.5 py-1.5 backdrop-blur-md">
+            <div className="hero-badge inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1 sm:px-4.5 sm:py-1.5 backdrop-blur-md">
               <div className="flex items-center gap-0.5">
                 {[...Array(5)].map((_, i) => (
                   <svg
@@ -102,13 +102,13 @@ export default function HeroSection({
                   </svg>
                 ))}
               </div>
-              <span className="text-white text-xs font-bold font-display uppercase tracking-wider">
+              <span className="text-white text-[10px] sm:text-xs font-bold font-display uppercase tracking-wider">
                 Top Rated Emergency Care ({hospitalDetails.rating})
               </span>
             </div>
 
             {/* Typography Heading */}
-            <h1 className="hero-title text-4xl sm:text-5xl lg:text-[54px] font-black text-white leading-[1.15] tracking-tight">
+            <h1 className="hero-title text-3xl sm:text-5xl lg:text-[54px] font-black text-white leading-[1.15] tracking-tight">
               Redefining Care with{" "}
               <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
                 Advanced Precision
@@ -116,33 +116,33 @@ export default function HeroSection({
             </h1>
 
             {/* Premium Editorial Subtitle */}
-            <p className="hero-subtitle text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl">
+            <p className="hero-subtitle text-slate-300 text-sm sm:text-lg leading-relaxed max-w-xl">
               At <strong className="text-white font-bold">{hospitalDetails.name}</strong>, we integrate board-certified physicians, state-of-the-art diagnostic medical facilities, and a seamless online scheduling system. Available for patients 24 hours, 7 days a week.
             </p>
 
             {/* Glowing Statistics */}
-            <div className="hero-stats-row grid grid-cols-3 gap-4 border-t border-white/5 pt-6 max-w-md">
+            <div className="hero-stats-row grid grid-cols-3 gap-2 sm:gap-4 border-t border-white/5 pt-4 sm:pt-6 max-w-md">
               {[
                 { value: "15+", label: "Board Doctors" },
                 { value: "24/7", label: "Critical Care" },
                 { value: "10K+", label: "Happy Patients" },
               ].map((stat) => (
                 <div key={stat.label} className="text-left">
-                  <div className="text-2xl font-black text-white font-display bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
+                  <div className="text-xl sm:text-2xl font-black text-white font-display bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
                     {stat.value}
                   </div>
-                  <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-1">{stat.label}</div>
+                  <div className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-1">{stat.label}</div>
                 </div>
               ))}
             </div>
 
             {/* Trust Badges */}
-            <div className="flex items-center gap-4 flex-wrap pt-4">
-              <span className="floating-badge inline-flex items-center gap-1.5 bg-teal-500/10 border border-teal-500/20 text-teal-400 text-xs font-semibold px-3.5 py-1.5 rounded-full">
+            <div className="flex items-center gap-3 flex-wrap pt-2 sm:pt-4">
+              <span className="floating-badge inline-flex items-center gap-1.5 bg-teal-500/10 border border-teal-500/20 text-teal-400 text-[10px] sm:text-xs font-semibold px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full">
                 <span className="w-1.5 h-1.5 bg-teal-400 rounded-full animate-pulse" />
                 NABH Accredited
               </span>
-              <span className="floating-badge inline-flex items-center gap-1.5 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold px-3.5 py-1.5 rounded-full">
+              <span className="floating-badge inline-flex items-center gap-1.5 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] sm:text-xs font-semibold px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full">
                 <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" />
                 Paperless Registry
               </span>

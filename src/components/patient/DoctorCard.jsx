@@ -17,62 +17,62 @@ export default function DoctorCard({ doctor, onBook }) {
       </div>
 
       {/* Info Container */}
-      <div className="p-6 flex flex-col gap-3 text-left">
+      <div className="p-3.5 sm:p-6 flex flex-col gap-2.5 sm:gap-3 text-left">
         {/* Name and Designation */}
         <div>
-          <h3 className="font-serif text-lg font-semibold text-color-text-primary group-hover:text-color-accent transition-colors duration-200">
+          <h3 className="font-serif text-sm xs:text-base sm:text-lg font-semibold text-color-text-primary group-hover:text-color-accent transition-colors duration-200 line-clamp-1">
             {doctor.name}
           </h3>
-          <p className="text-body-sm text-color-text-secondary mt-0.5 leading-none">
+          <p className="text-[11px] xs:text-xs sm:text-body-sm text-color-text-secondary mt-0.5 leading-tight truncate">
             {doctor.designation}
           </p>
         </div>
 
         {/* Specialty and Experience */}
-        <div className="flex items-center gap-3">
-          <span className="inline-flex text-label text-color-accent bg-color-accent-light px-2.5 py-0.5 rounded-full font-medium capitalize">
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-3">
+          <span className="inline-flex text-[9px] xs:text-label text-color-accent bg-color-accent-light px-2 py-0.5 rounded-full font-medium capitalize">
             {doctor.specialty}
           </span>
-          <span className="text-body-sm text-color-text-secondary font-medium">
-            {doctor.experience} Years Exp
+          <span className="text-[10px] xs:text-caption sm:text-body-sm text-color-text-secondary font-medium shrink-0">
+            {doctor.experience} Yrs Exp
           </span>
         </div>
 
         {/* Star Rating */}
-        <div className="flex items-center gap-1">
-          <div className="flex items-center gap-0.5 text-color-accent">
+        <div className="flex items-center gap-1 flex-wrap">
+          <div className="flex items-center gap-0.5 text-color-accent shrink-0">
             {stars.map((star) => (
               <Star
                 key={star}
-                className={`w-3.5 h-3.5 ${
+                className={`w-3 h-3 sm:w-3.5 sm:h-3.5 ${
                   star <= Math.floor(doctor.rating) ? "fill-color-accent" : ""
                 }`}
                 strokeWidth={2}
               />
             ))}
           </div>
-          <span className="text-body-sm font-semibold text-color-text-primary ml-1">
+          <span className="text-[11px] sm:text-body-sm font-semibold text-color-text-primary ml-0.5 shrink-0">
             {doctor.rating}
           </span>
-          <span className="text-caption text-color-text-muted">
-            ({doctor.reviewCount} reviews)
+          <span className="text-[9px] xs:text-caption text-color-text-muted shrink-0">
+            ({doctor.reviewCount})
           </span>
         </div>
 
         {/* Availability Timing */}
-        <div className="pt-2 border-t border-color-border text-caption text-color-text-muted flex justify-between items-center">
-          <span>Consultation Fee:</span>
+        <div className="pt-2 border-t border-color-border text-[10px] sm:text-caption text-color-text-muted flex justify-between items-center">
+          <span>Fee:</span>
           <span className="font-semibold text-color-text-primary">&#8377;{doctor.consultationFee}</span>
         </div>
       </div>
 
       {/* Action Button */}
-      <div className="px-6 pb-6 pt-0">
+      <div className="px-3.5 pb-3.5 sm:px-6 sm:pb-6 pt-0">
         <button
           onClick={onBook}
-          className="btn-primary-sm w-full text-center"
+          className="btn-primary-sm w-full text-center text-xs sm:text-body-sm py-1.5 sm:py-2 px-2 sm:px-4 min-h-[34px] sm:min-h-[38px] cursor-pointer"
         >
-          Book Appointment
+          Book Now
         </button>
       </div>
     </div>

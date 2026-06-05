@@ -40,7 +40,7 @@ export default function HeroSection({ onPrefillQuickBook }) {
     <section
       id="home"
       ref={containerRef}
-      className="relative min-h-screen flex items-center pt-24 pb-16 lg:py-0 overflow-hidden bg-slate-950"
+      className="relative min-h-screen flex items-center pt-24 pb-12 sm:pt-28 sm:pb-16 lg:py-0 overflow-hidden bg-slate-950"
     >
       {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0">
@@ -51,61 +51,60 @@ export default function HeroSection({ onPrefillQuickBook }) {
           loading="eager"
         />
         {/* Editorial dark gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent max-lg:bg-black/65" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent max-lg:bg-black/75" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent pointer-events-none" />
       </div>
 
       <div className="container-main relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         {/* Left Column: Headings & Copy */}
-        <div className="lg:col-span-7 flex flex-col gap-6 text-white text-left">
+        <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-6 text-white text-left">
           {/* Overline tag */}
           <div className="hero-overline self-start">
-            <span className="inline-flex items-center text-label text-color-accent-light bg-white/10 border border-white/20 px-4 py-1.5 rounded-full backdrop-blur-sm">
+            <span className="inline-flex items-center text-[10px] sm:text-label text-color-accent-light bg-white/10 border border-white/20 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full backdrop-blur-sm">
               NABH Accredited &middot; Est. 2004
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="hero-headline text-hero tracking-wide">
+          <h1 className="hero-headline text-3xl xs:text-4xl sm:text-5xl lg:text-hero tracking-wide leading-tight lg:leading-[1.05]">
             Trusted Care,<br />
-            Delivered with <span className="italic">Precision.</span>
+            Delivered with <span className="italic font-light">Precision.</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="hero-subline text-body-lg text-white/70 max-w-xl leading-relaxed">
+          <p className="hero-subline text-sm sm:text-base lg:text-body-lg text-white/70 max-w-xl leading-relaxed">
             Advanced diagnostics and specialist consultations in Ahmedabad &mdash; designed around you.
           </p>
 
           {/* Stats Row */}
-          <div className="hero-stats flex items-center gap-6 md:gap-8 py-4 my-2 border-y border-white/10 self-start">
-            <div className="hero-stat-item flex flex-col">
-              <span className="font-serif text-3xl md:text-4xl font-bold text-white leading-none">25+</span>
-              <span className="text-label text-white/60 mt-1 uppercase tracking-wider">Specialties</span>
+          <div className="hero-stats w-full grid grid-cols-3 gap-2 sm:gap-6 py-3 sm:py-4 my-1 sm:my-2 border-y border-white/10">
+            <div className="hero-stat-item flex flex-col text-left">
+              <span className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-none">25+</span>
+              <span className="text-[10px] sm:text-label text-white/60 mt-1 uppercase tracking-wider">Specialties</span>
             </div>
-            <div className="w-px h-10 bg-white/15" />
-            <div className="hero-stat-item flex flex-col">
-              <span className="font-serif text-3xl md:text-4xl font-bold text-white leading-none">4.9★</span>
-              <span className="text-label text-white/60 mt-1 uppercase tracking-wider">Rating</span>
+            <div className="hero-stat-item flex flex-col text-left pl-3 border-l border-white/10">
+              <span className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-none">4.9★</span>
+              <span className="text-[10px] sm:text-label text-white/60 mt-1 uppercase tracking-wider">Rating</span>
             </div>
-            <div className="w-px h-10 bg-white/15" />
-            <div className="hero-stat-item flex flex-col">
-              <span className="font-serif text-3xl md:text-4xl font-bold text-white leading-none">50k+</span>
-              <span className="text-label text-white/60 mt-1 uppercase tracking-wider">Patients Served</span>
+            <div className="hero-stat-item flex flex-col text-left pl-3 border-l border-white/10">
+              <span className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-none">50k+</span>
+              <span className="text-[10px] sm:text-label text-white/60 mt-1 uppercase tracking-wider">Patients Served</span>
             </div>
           </div>
 
           {/* CTA Row */}
-          <div className="hero-cta-row flex flex-wrap gap-4 mt-2">
+          <div className="hero-cta-row flex gap-3 sm:gap-4 mt-2 w-full xs:w-auto">
             <a
               href="#booking-section"
               onClick={(e) => handleScrollTo(e, "#booking-section")}
-              className="hero-cta-btn btn-primary min-w-[170px]"
+              className="hero-cta-btn btn-primary flex-1 sm:flex-initial text-center justify-center min-w-[130px] sm:min-w-[170px] text-xs sm:text-sm py-2 px-3 sm:py-3 sm:px-6 cursor-pointer"
             >
               Book Appointment
             </a>
             <a
               href="#doctors-section"
               onClick={(e) => handleScrollTo(e, "#doctors-section")}
-              className="hero-cta-btn btn-ghost-white min-w-[170px]"
+              className="hero-cta-btn btn-ghost-white flex-1 sm:flex-initial text-center justify-center min-w-[130px] sm:min-w-[170px] text-xs sm:text-sm py-2 px-3 sm:py-3 sm:px-6 cursor-pointer"
             >
               View Doctors
             </a>
@@ -113,7 +112,7 @@ export default function HeroSection({ onPrefillQuickBook }) {
         </div>
 
         {/* Right Column: Floating Appointment Card */}
-        <div className="lg:col-span-5 hero-booking-card-wrapper flex justify-center lg:justify-end lg:-mb-12 relative z-20">
+        <div className="lg:col-span-5 hero-booking-card-wrapper flex justify-center lg:justify-end lg:-mb-12 relative z-20 w-full">
           <HeroBookingCard onPrefill={onPrefillQuickBook} />
         </div>
       </div>
